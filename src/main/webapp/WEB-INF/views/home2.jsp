@@ -5,17 +5,18 @@
     <title>WebSocket with SockJS</title>
 </head>
 <body>
-<h1>SockJS互動範例</h1>
+<h1>javax.websocket互動範例</h1>
 <ul id="ul">
 </ul>
 <script type="text/javascript" src="/SpringWS/resources/js/sockjs-1.0.0.min.js"></script>
 <script>
-
-    // SockJS與原生的WebSocket的方法基本是一致的, 所以只需要將 new WebSocket(url) 换成 new SockJS(url) 就可以了    
-    var url = "/SpringWS/echo";    
-    var sock = new SockJS(url);
-    //var url = "ws://localhost:8080/SpringWS/echo2"; //如果有SSL加密後, ws就是wss
-    //var sock = new WebSocket(url); //WebSocket 是HTML5開始提供的一種瀏覽器與伺服器間進行全雙工通訊的網路技術, WebSocket通訊協定於2011年被IETF定為標準RFC6455, WebSocketAPI被W3C定為標準
+    // SockJS與原生的WebSocket的方法基本是一致的, 所以只需要將 new WebSocket(url) 换成 new SockJS(url) 就可以了
+    
+    //var url = "/SpringWS/echo";    
+    //var sock = new SockJS(url);
+    
+    var url = "ws://localhost:8080/SpringWS/echo2"; //如果有SSL加密後, ws就是wss
+    var sock = new WebSocket(url); //WebSocket 是HTML5開始提供的一種瀏覽器與伺服器間進行全雙工通訊的網路技術, WebSocket通訊協定於2011年被IETF定為標準RFC6455, WebSocketAPI被W3C定為標準
    
     //啟動連線的時後
     sock.onopen = function (event) {

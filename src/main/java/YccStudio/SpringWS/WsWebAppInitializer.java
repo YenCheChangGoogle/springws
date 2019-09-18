@@ -1,15 +1,10 @@
-package com.dadiyang.springws;
+package YccStudio.SpringWS;
 
-import com.dadiyang.springws.config.RootConfig;
-import com.dadiyang.springws.config.WebConfig;
+import YccStudio.SpringWS.config.RootConfig;
+import YccStudio.SpringWS.config.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-/**
- * 使用注解驱动的配置初始化器
- *
- * @author dadiyang
- * @date 2018/11/4
- */
+//使用注解驅動的配置初始化器
 public class WsWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {

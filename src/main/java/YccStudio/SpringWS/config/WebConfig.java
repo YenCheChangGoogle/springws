@@ -1,4 +1,4 @@
-package com.dadiyang.springws.config;
+package YccStudio.SpringWS.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,31 +9,26 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-/**
- * springmvc和整个应用的配置类
- *
- * @author dadiyang
- * @date 2018/11/4
- */
+//SpringMvc和整個應用的配置
+
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.dadiyang.springws"})
+@ComponentScan(basePackages={
+    "YccStudio.SpringWS"
+})
 public class WebConfig extends WebMvcConfigurerAdapter {
-    /**
-     * 配置视图解析器
-     */
+    
+    //配置視圖解析器
     @Bean
     public ViewResolver viewResolver() {
-        InternalResourceViewResolver resourceViewResolver = new InternalResourceViewResolver();
+        InternalResourceViewResolver resourceViewResolver=new InternalResourceViewResolver();
         resourceViewResolver.setPrefix("/WEB-INF/views/");
         resourceViewResolver.setSuffix(".jsp");
         resourceViewResolver.setExposeContextBeansAsAttributes(true);
         return resourceViewResolver;
     }
 
-    /**
-     * 设置不拦截静态资源文件请求
-     */
+    //设置不攔截静態資源文件請求
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
